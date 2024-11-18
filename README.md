@@ -36,6 +36,9 @@ This repository documents the setup and configuration of a basic home lab tailor
     - Subnet Mask: 255.255.255.0
     - Default Gateway: 192.168.56.1
   - Click OK to save the settings.
+- Configure Static IP on Kali Linux
+  - Open the terminal in Kali Linux.
+  - Edit the network configuration file
 
 - Test Connectivity with Ping
   - On Kali Linux, ping the Windows 10 machine
