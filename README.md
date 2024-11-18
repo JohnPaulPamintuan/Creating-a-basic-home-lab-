@@ -9,9 +9,8 @@ This repository documents the setup and configuration of a basic home lab tailor
 
 # Tool used
 - Oracle Virtualbox
-- Windows 10 (using Microsoft Defender, Sysmon) 
+- Windows 10 (using tools like Microsoft Defender, Event viewer and installed Sysmon and Splunk) 
 - Kali linux (using other tools like Nmap, Metasploit and Python) 
-- Splunk
 
 
 # Lab Components
