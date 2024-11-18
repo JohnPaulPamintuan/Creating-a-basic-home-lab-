@@ -28,6 +28,19 @@ This repository documents the setup and configuration of a basic home lab tailor
 ## Network Setup
 - Simulated network with isolated virtual machines in VirtualBox for safe experimentation.
 - Configured VirtualBox network settings for segmentation and security (e.g., NAT, Host-Only, and Bridged adapters).
+- Configure Static IP on Windows 10
+  - Locate the Host-Only Network Adapter (e.g., "Ethernet 2"), right-click it, and select Properties.
+  - Select Internet Protocol Version 4 (TCP/IPv4) and click Properties.
+  - Enter the following:
+    - IP Address: 192.168.56.102
+    - Subnet Mask: 255.255.255.0
+    - Default Gateway: 192.168.56.1
+  - Click OK to save the settings.
+
+- Test Connectivity with Ping
+  - On Kali Linux, ping the Windows 10 machine
+  - On Windows 10, ping the Kali Linux machine
+    - If the ping command succeeds, you will see replies indicating connectivity.
 ## Activities & Scenarios
 - Vulnerability Scanning: Use Nmap and Nessus to discover and assess vulnerabilities.
 - Penetration Testing: Perform basic exploits using Metasploit and manual techniques.
