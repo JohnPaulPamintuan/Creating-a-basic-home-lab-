@@ -6,6 +6,14 @@ This repository documents the setup and configuration of a basic home lab tailor
 <b>Safe Experimentation</b>: Test exploits, analyze malware, and practice defense strategies without impacting live systems.
 <b>Skill Development</b>: Enhance skills in areas like penetration testing, digital forensics, and incident response.
 
+
+# Tool used
+- Oracle Virtualbox
+- Windows 10 (using Microsoft Defender, Sysmon) 
+- Kali linux (using other tools like Nmap, Metasploit and Python) 
+- Splunk
+
+
 # Lab Components
 ## Hardware
 - Personal computer or laptop with virtualization support (Intel VT-x/AMD-V).
