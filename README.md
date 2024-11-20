@@ -36,38 +36,35 @@ To begin with, we'll create a virtualized environment using VirtualBox or VMware
 
  ## Installing VirtualBox
 - Download VirtualBox: Go to VirtualBox.org and download the appropriate version for your operating system.
+  <img src="https://i.imgur.com/iQyWFYh.png" height="80%" width="60%" alt="Virtual box"/>
 - Verify the SHA-256 Hash: Ensure the downloaded file is legitimate by checking its hash against the official value.
+  <img src="https://i.imgur.com/M6S1OTF.png" height="90%" width="90%" alt="Virtual box"/>
+  <img src="https://i.imgur.com/VtwhJnV.png" height="80%" width="60%" alt="Virtual box"/>
+  <img src="https://i.imgur.com/ptaOtad.png" height="60%" width="60%" alt="Virtual box"/>
 - Complete the Installation: Follow the installation prompts and customize any settings as needed.
+  
 
-IMAGE
-IMAGE
-IMAGE 
 ## Creating Virtual Machines (VMs)
 - Windows 10 VM:
   - Use the Media Creation Tool to create a Windows 10 ISO and set up a VM with at least 4GB RAM and 2 CPUs.
 - Kali Linux VM:
   - Download a pre-built Kali Linux ISO from Kali.org and set up a VM for penetration testing tools.
 
-IMAGE 
-IMAGE 
+  <img src="https://i.imgur.com/6Z6G2ZD.png" height="50%" width="50%" alt="Virtual box"/>
+  <img src="https://i.imgur.com/7ZtdJ6T.png" height="50%" width="50%" alt="Virtual box"/>
+  <img src="https://i.imgur.com/2i8emPg.png" height="50%" width="50%" alt="Virtual box"/>
+  <img src="https://i.imgur.com/l5mrdwK.png" height="50%" width="50%" alt="Virtual box"/>
 
 # Network Configuration for Secure Testing
 VirtualBox offers several network modes to control how your VMs communicate with each other and the host system. The correct configuration is essential for securing your testing environment, especially when working with potentially malicious software.
 
 ## Network Options in VirtualBox
-- NAT: Default setting, gives the VM access to the internet but isolates it from the host network. Ideal for tool testing.
-IMAGE
-
-- NAT Network: Allows multiple VMs to share the same network while maintaining internet access.
-IMAGE
-- Bridged: The VM acts like a physical device on your local network. Not recommended for malware analysis as it increases the risk of compromising the host.
-IMAGE
-- Host-Only: Only allows communication between the host and VMs. No internet access.
-IMAGE
-- Internal Network: Isolates the VM network from the host and the internet. Best for malware analysis as VMs can communicate only with each other.
-IMAGE
-- Not Attached: No network connection. Ideal for maximum isolation.
-- IMAGE
+- <b>NAT</b>: Default setting, gives the VM access to the internet but isolates it from the host network. Ideal for tool testing.
+- <b>NAT Network</b>: Allows multiple VMs to share the same network while maintaining internet access.
+- <b>Bridged</b>: The VM acts like a physical device on your local network. Not recommended for malware analysis as it increases the risk of compromising the host.
+- <b>Host-Only</b>: Only allows communication between the host and VMs. No internet access.
+- <b>Internal Network</b>: Isolates the VM network from the host and the internet. Best for malware analysis as VMs can communicate only with each other.
+- <b>Not Attached</b>: No network connection. Ideal for maximum isolation.
 
 ## Step-by-Step Configuration Guide for setting up your VMs and configuring network settings:
 Create a new VM for Windows 10 or Kali Linux.
@@ -75,11 +72,21 @@ Assign sufficient resources (RAM, CPU, storage) based on your system’s capabil
 Choose Network Settings:
 For testing tools, select NAT.
 For malware analysis, select Internal Network or Not Attached.
+    <img src="https://i.imgur.com/AZKFdhW.png" height="50%" width="50%" alt="Network Options"/>
+
 Configure static IP addresses for VM communication (e.g., use ipconfig in Windows and ifconfig in Kali).
+
+<img src="https://i.imgur.com/dXsZWx6.png" height="30%" width="50%" alt="Network Options"/>
+<img src="https://i.imgur.com/FZK1m6J.png" height="30%" width="50%" alt="Network Options"/>
+<img src="https://i.imgur.com/WrLXr7L.png" height="30%" width="50%" alt="Network Options"/>
+<img src="https://i.imgur.com/FuDMxl1.png" height="30%" width="50%" alt="Network Options"/>
+<img src="https://i.imgur.com/imJrxVK.png" height="30%" width="50%" alt="Network Options"/>
+<img src="https://i.imgur.com/PFIagfz.png" height="30%" width="50%" alt="Network Options"/>
+<img src="https://i.imgur.com/cCZYSln.png" height="30%" width="50%" alt="Network Options"/>
+<img src="https://i.imgur.com/se9KAnT.png" height="30%" width="50%" alt="Network Options"/>
+
 Take a snapshot after configuring the VM to preserve the setup.
-IMAGE
-IMAGE
-IMAGE
+   
 
 ## VM Best Practices and Snapshots
 To protect your home lab and ensure the stability of your VMs, follow these best practices:
@@ -93,8 +100,8 @@ To protect your home lab and ensure the stability of your VMs, follow these best
 
 - How to Take Snapshots in VirtualBox:
   - In the VM’s settings, go to Snapshots, and click Take Snapshot. Label it appropriately for easy identification.
+  <img src="https://i.imgur.com/nK9AacH.png" height="50%" width="50%" alt="Network Options"/>
 
-IMAGE
 
 # Generating Telemetry from Malicious Activity
 Once the lab environment is set up, we can simulate an attack scenario to generate telemetry data for analysis. This project highlights offensive security techniques, including using Nmap for port reconnaissance, creating custom malware, and analyzing telemetry generated after executing the malware with Windows Defender disabled. While antivirus evasion is not a focus, the project emphasizes telemetry generation and analysis, enabling a deeper understanding of offensive and defensive cybersecurity techniques.
