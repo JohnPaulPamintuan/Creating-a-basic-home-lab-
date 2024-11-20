@@ -84,6 +84,7 @@ Configure static IP addresses for VM communication (e.g., use ipconfig in Window
 <img src="https://i.imgur.com/PFIagfz.png" height="30%" width="50%" alt="Network Options"/>
 <img src="https://i.imgur.com/cCZYSln.png" height="30%" width="50%" alt="Network Options"/>
 <img src="https://i.imgur.com/se9KAnT.png" height="30%" width="50%" alt="Network Options"/>
+<img src="https://i.imgur.com/iv0am4E.png" height="30%" width="50%" alt="Network Options"/>
 
 Take a snapshot after configuring the VM to preserve the setup.
    
