@@ -88,6 +88,33 @@ A snapshot is a "moment-in-time" backup of your VM that you can revert to later.
 - This project highlights offensive security techniques, including using Nmap for port scanning, creating custom malware, and analyzing telemetry generated after executing the malware with Windows Defender disabled.
 - While not focused on antivirus evasion methods, the project prioritizes showcasing telemetry generation on a Windows machine, enabling exploration of various approaches to enhance cybersecurity skills.
 
+-This project simulates a real-world attack scenario to generate telemetry data and analyze malicious activity on a Windows target machine. The process includes using Nmap for reconnaissance, creating and executing custom malware, and monitoring system telemetry with tools like Sysmon and Splunk. While antivirus evasion is not a focus, the project emphasizes telemetry generation and analysis, enabling a deeper understanding of offensive and defensive cybersecurity techniques.
+
+# Objective:   
+- Simulate malicious activity on a Windows machine to generate telemetry data.
+- Analyze telemetry logs to detect malicious behaviors and improve understanding of security monitoring techniques.
+
+# Tools & Techniques:
+- Nmap: For port scanning and service identification on the target machine.
+- MsfVenom: To create a reverse shell malware payload.
+- Metasploit Framework: To manage and monitor reverse shell connections.
+- Sysmon: For detailed system activity logging.
+- Splunk: To ingest and analyze telemetry logs from Sysmon.
+
+# Outcome:
+- Generated detailed telemetry from simulated malware activity.
+- Detected key indicators of compromise (IoCs) using Splunk dashboards and queries.
+- Gained insights into how telemetry data can enhance defensive strategies.
+
+# Skills Demonstrated:
+
+- Port scanning and reconnaissance using Nmap.
+- Malware creation and execution with offensive security tools.
+- Configuring and managing Sysmon for telemetry generation.
+- Using Splunk for log ingestion, analysis, and creating actionable insights.
+- Understanding the relationship between offensive actions and defensive monitoring techniques.
+
+# Step-by-Step Process
 ## Using Nmap for Scanning
 - I focus on using Nmap to scan a Windows machine effectively, employing options like '-a' for comprehensive scans and '-Pn' to bypass pings, ultimately identifying open ports such as RDP on port 3389.
 -  Using Nmap to scan the target Windows machine for open ports, specifically looking for services such as RDP on port 3389.
