@@ -161,13 +161,19 @@ IMAGE
   <img src="https://i.imgur.com/yG6MQl1.png" height="50%" width="50%" alt="Network Options"/>
   <img src="https://i.imgur.com/ISyKHeg.png" height="50%" width="50%" alt="Network Options"/>
   <img src="https://i.imgur.com/PyQh0LP.png" height="50%" width="50%" alt="Network Options"/>
+  <img src="https://i.imgur.com/o0AfrPN.png" height="50%" width="50%" alt="Network Options"/>
+  <img src="https://i.imgur.com/6OXRhXt.png" height="50%" width="50%" alt="Network Options"/>
 
 
 ## Monitoring Telemetry with Splunk
 - Install and configure Sysmon on the Windows machine to capture detailed logs of system activities.
 - Use Splunk to ingest Sysmon logs and create an index for endpoint telemetry.
 - Analyze logs to detect malicious activity and visualize key IoCs with Splunk dashboards.
-IMAGE
+  <img src="https://i.imgur.com/6OXRhXt.png" height="50%" width="50%" alt="Network Options"/>
+  <img src="https://i.imgur.com/6OXRhXt.png" height="50%" width="50%" alt="Network Options"/>
+  <img src="https://i.imgur.com/6OXRhXt.png" height="50%" width="50%" alt="Network Options"/>
+  <img src="https://i.imgur.com/6OXRhXt.png" height="50%" width="50%" alt="Network Options"/>
+  <img src="https://i.imgur.com/6OXRhXt.png" height="50%" width="50%" alt="Network Options"/>
 
 ## Conclusion
 
