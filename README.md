@@ -1,98 +1,103 @@
-# Basic Home Lab for Cybersecurity
-This repository documents the setup and configuration of a basic home lab tailored for learning and practicing cybersecurity concepts. The lab environment provides a hands-on platform to explore fundamental skills such as vulnerability assessment, network monitoring, and ethical hacking, as well as to test tools and techniques in a controlled environment.
-
-# Goals
-<b>Learn by Doing </b>: Gain practical experience with cybersecurity tools and techniques.
-<b>Safe Experimentation</b>: Test exploits, analyze malware, and practice defense strategies without impacting live systems.
-<b>Skill Development</b>: Enhance skills in areas like penetration testing, digital forensics, and incident response.
+# Setting Up a Home Lab for Cybersecurity
+## Project Overview
+This project combines setting up a secure home lab environment for cybersecurity testing with generating and analyzing telemetry from simulated malicious activity. 
+The goal is to experiment with offensive techniques and detect malicious behaviors using monitoring tools, such as Sysmon and Splunk. By combining VM configuration, malware creation, and telemetry analysis, this project offers a comprehensive learning experience.
 
 
-# Tool used
-- Oracle Virtualbox
-- Windows 10 
-- Kali linux
+
+## Table of Contents
+1. Introduction
+    - Goals
+2. Setting up the Home Lab
+    - Installation of VirtualBox
+    - Creating Virtual Machines
+3.  Network Configuration for Secure Testing
+    - Network Options in VirtualBox
+    - Step-by-Step Configuration Guide
+    - VM Best Practices and Snapshots
+4.  Generating Telemetry from Malicious Activity
+    - Tools & Techniques Used
+    - Skills demonstrated
+    - Step-by-Step Guide
+5. Conclusion
 
 
-# Lab Components
-## Hardware
-- Personal computer or laptop with virtualization support (Intel VT-x/AMD-V).
-- Minimum 16GB RAM (recommended for smooth virtualization).
+# 1. Introduction 
+Establishing a home lab is an essential step in cybersecurity, allowing for the safe testing of tools, techniques, and simulations without affecting real-world systems. This project goes beyond setting up a basic lab, integrating offensive techniques such as malware execution and analyzing system telemetry to detect malicious activity. The project emphasizes the importance of understanding both attack and defense methods within a secure virtualized environment.
 
-## Software & Tools
-- Virtualization Platform: VirtualBox by Oracle.
-- Operating Systems:
-  - Kali Linux (offensive security tools).
-  - Windows 10/11 (to practice privilege escalation and malware analysis).
-  - Ubuntu/Debian (to set up a vulnerable Linux server).
-- Vulnerable Applications:
-  - DVWA (Damn Vulnerable Web Application).
-  - Metasploitable 2 or 3.
-- Monitoring Tools:
-  - Wireshark (network analysis).
-  - Splunk Free (log analysis).
-- Other Tools:
-  - Nmap, Burp Suite, and Nessus Essentials (vulnerability scanning).
-## Network Setup
-- Simulated network with isolated virtual machines in VirtualBox for safe experimentation.
-- Configured VirtualBox network settings for segmentation and security (e.g., NAT, Host-Only, and Bridged adapters).
-- Configure Static IP on Windows 10
-  - Locate the Host-Only Network Adapter (e.g., "Ethernet 2"), right-click it, and select Properties.
-  - Select Internet Protocol Version 4 (TCP/IPv4) and click Properties.
-  - Enter the following:
-    - IP Address: 192.168.56.102
-    - Subnet Mask: 255.255.255.0
-    - Default Gateway: 192.168.56.1
-  - Click OK to save the settings.
-- Configure Static IP on Kali Linux
-  - Open the terminal in Kali Linux.
-  - Edit the network configuration file
+##  Goals
+- <b>Learn by Doing </b>: Gain practical experience with cybersecurity tools and techniques.
+- <b>Safe Experimentation</b>: Test exploits, analyze malware, and practice defense strategies without impacting live systems.
+- <b>Skill Development</b>: Enhance skills in areas like penetration testing, digital forensics, and incident response.
 
-- Test Connectivity with Ping
-  - On Kali Linux, ping the Windows 10 machine
-  - On Windows 10, ping the Kali Linux machine
-    - If the ping command succeeds, you will see replies indicating connectivity.
-## Activities & Scenarios
-- Vulnerability Scanning: Use Nmap and Nessus to discover and assess vulnerabilities.
-- Penetration Testing: Perform basic exploits using Metasploit and manual techniques.
-- Network Traffic Analysis: Capture and analyze packets with Wireshark.
-- Log Analysis: Set up a log monitoring system using Splunk or ELK.
-- Forensics: Practice analyzing compromised systems.
 
-# Important Considerations
-## Sandbox Environment
-Setting up a virtual machine (VM) does not automatically create a sandboxed environment. Without proper configuration, malicious software running in the VM could potentially infect your host system or other devices on your network.
+# 2. Setting Up the Home Lab
+To begin with, we'll create a virtualized environment using VirtualBox or VMware. This isolated environment enables safe testing of cybersecurity tools and malware, without risking your physical machine. For this project, we’ll use VirtualBox, a free and widely used tool for virtualization.
 
-## Recommendations:
-- Do Not Run Untrusted Malware: Avoid downloading and executing malware from the internet until you are certain your environment is fully isolated.
-- Controlled Malware Testing: Use tools like Kali Linux to craft your own malware or exploits. Test these in a controlled setup to learn how they behave without risking unintended consequences.
-- Network Isolation: Configure VirtualBox network settings (e.g., Host-Only or NAT network modes) to isolate your virtual machines from your home network.
+ ## Installing VirtualBox
+- Download VirtualBox: Go to VirtualBox.org and download the appropriate version for your operating system.
+- Verify the SHA-256 Hash: Ensure the downloaded file is legitimate by checking its hash against the official value.
+- Complete the Installation: Follow the installation prompts and customize any settings as needed.
 
-<b><ins>Pro Tip:</b></ins> 
-Improperly configured virtual machines can lead to serious issues. For example, running ransomware in an unprotected VM could result in data loss on your host system. Always double-check your configuration before executing potentially harmful operations.
+IMAGE
+IMAGE
+IMAGE 
+## Creating Virtual Machines (VMs)
+- Windows 10 VM:
+  - Use the Media Creation Tool to create a Windows 10 ISO and set up a VM with at least 4GB RAM and 2 CPUs.
+- Kali Linux VM:
+  - Download a pre-built Kali Linux ISO from Kali.org and set up a VM for penetration testing tools.
 
-## Snapshots
-A snapshot is a "moment-in-time" backup of your VM that you can revert to later. This is a crucial tool for safe experimentation in your home lab.
+IMAGE 
+IMAGE 
 
-- Best Practices for Snapshots:
-  - Create a Snapshot Before Testing: Always create a snapshot before running exploits, malware, or any potentially destructive operations.
-  - Revert When Needed: If your VM becomes unusable due to testing, revert to the snapshot to restore your system to a functional state.
-  - Neat Organization: Label your snapshots clearly, such as "Pre-Malware Test" or "Fresh Install".
+# Network Configuration for Secure Testing
+VirtualBox offers several network modes to control how your VMs communicate with each other and the host system. The correct configuration is essential for securing your testing environment, especially when working with potentially malicious software.
 
-- How to Create a Snapshot in VirtualBox:
-  - Right-click your virtual machine in the VirtualBox Manager.
-  - Select Take Snapshot.
-  - Provide a descriptive name and optional notes for future reference.
-    - By using snapshots effectively, you can safely experiment and learn without permanent damage to your lab environment.
+## Network Options in VirtualBox
+- NAT: Default setting, gives the VM access to the internet but isolates it from the host network. Ideal for tool testing.
+IMAGE
 
-#  Generate telemetry and detect malicious activity on a target machines.
-- This project highlights offensive security techniques, including using Nmap for port scanning, creating custom malware, and analyzing telemetry generated after executing the malware with Windows Defender disabled.
-- While not focused on antivirus evasion methods, the project prioritizes showcasing telemetry generation on a Windows machine, enabling exploration of various approaches to enhance cybersecurity skills.
+- NAT Network: Allows multiple VMs to share the same network while maintaining internet access.
+IMAGE
+- Bridged: The VM acts like a physical device on your local network. Not recommended for malware analysis as it increases the risk of compromising the host.
+IMAGE
+- Host-Only: Only allows communication between the host and VMs. No internet access.
+IMAGE
+- Internal Network: Isolates the VM network from the host and the internet. Best for malware analysis as VMs can communicate only with each other.
+IMAGE
+- Not Attached: No network connection. Ideal for maximum isolation.
+- IMAGE
 
--This project simulates a real-world attack scenario to generate telemetry data and analyze malicious activity on a Windows target machine. The process includes using Nmap for reconnaissance, creating and executing custom malware, and monitoring system telemetry with tools like Sysmon and Splunk. While antivirus evasion is not a focus, the project emphasizes telemetry generation and analysis, enabling a deeper understanding of offensive and defensive cybersecurity techniques.
+## Step-by-Step Configuration Guide for setting up your VMs and configuring network settings:
+Create a new VM for Windows 10 or Kali Linux.
+Assign sufficient resources (RAM, CPU, storage) based on your system’s capabilities.
+Choose Network Settings:
+For testing tools, select NAT.
+For malware analysis, select Internal Network or Not Attached.
+Configure static IP addresses for VM communication (e.g., use ipconfig in Windows and ifconfig in Kali).
+Take a snapshot after configuring the VM to preserve the setup.
+IMAGE
+IMAGE
+IMAGE
 
-# Objective:   
-- Simulate malicious activity on a Windows machine to generate telemetry data.
-- Analyze telemetry logs to detect malicious behaviors and improve understanding of security monitoring techniques.
+## VM Best Practices and Snapshots
+To protect your home lab and ensure the stability of your VMs, follow these best practices:
+
+- VM Configuration
+  - Resource Allocation: Do not over-provision resources (e.g., CPU, RAM, storage) as it can slow down both the host and VMs.
+  - Isolation: Always isolate malware testing VMs from the host using Internal Network or Not Attached options.
+- Take Snapshots
+  - Before you start testing any tools or malware, always take a snapshot of your VM.
+  - Snapshots allow you to restore the machine to a previous, clean state if something goes wrong.
+
+- How to Take Snapshots in VirtualBox:
+  - In the VM’s settings, go to Snapshots, and click Take Snapshot. Label it appropriately for easy identification.
+
+IMAGE
+
+# Generating Telemetry from Malicious Activity
+Once the lab environment is set up, we can simulate an attack scenario to generate telemetry data for analysis. This project highlights offensive security techniques, including using Nmap for port reconnaissance, creating custom malware, and analyzing telemetry generated after executing the malware with Windows Defender disabled. While antivirus evasion is not a focus, the project emphasizes telemetry generation and analysis, enabling a deeper understanding of offensive and defensive cybersecurity techniques.
 
 # Tools & Techniques:
 - Nmap: For port scanning and service identification on the target machine.
@@ -101,13 +106,7 @@ A snapshot is a "moment-in-time" backup of your VM that you can revert to later.
 - Sysmon: For detailed system activity logging.
 - Splunk: To ingest and analyze telemetry logs from Sysmon.
 
-# Outcome:
-- Generated detailed telemetry from simulated malware activity.
-- Detected key indicators of compromise (IoCs) using Splunk dashboards and queries.
-- Gained insights into how telemetry data can enhance defensive strategies.
-
 # Skills Demonstrated:
-
 - Port scanning and reconnaissance using Nmap.
 - Malware creation and execution with offensive security tools.
 - Configuring and managing Sysmon for telemetry generation.
@@ -115,7 +114,7 @@ A snapshot is a "moment-in-time" backup of your VM that you can revert to later.
 - Understanding the relationship between offensive actions and defensive monitoring techniques.
 
 # Step-by-Step Process
-## Using Nmap for Scanning
+## Using Nmap for reconnaissance 
 - I focus on using Nmap to scan a Windows machine effectively, employing options like '-a' for comprehensive scans and '-Pn' to bypass pings, ultimately identifying open ports such as RDP on port 3389.
 -  Using Nmap to scan the target Windows machine for open ports, specifically looking for services such as RDP on port 3389.
   - This emphasizes the importance of generating whether the ports are open and annotating any findingss.
@@ -145,6 +144,6 @@ IMAGE
 IMAGE
 
 ## Conclusion
-This comprehensive approach demonstrates offensive techniques, highlights their impact on system telemetry, and fosters expertise in detecting and analyzing malicious activity in a simulated environment.
 
+- This project demonstrates the combination of setting up a secure home lab with simulating malicious activity to generate and analyze telemetry. It helps develop skills in offensive security, malware analysis, and defensive monitoring techniques. By using tools like Nmap, Metasploit, Sysmon, and Splunk, you’ll gain a deeper understanding of how malicious activity can be detected and how telemetry data can be used to enhance cybersecurity defense strategies.
 
