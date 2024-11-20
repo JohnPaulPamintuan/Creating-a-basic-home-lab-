@@ -126,28 +126,26 @@ To protect your home lab and ensure the stability of your VMs, follow these best
 
 
 # Generating Telemetry from Malicious Activity
-Once the lab environment is set up, we can simulate an attack scenario to generate telemetry data for analysis. This project highlights offensive security techniques, including using Nmap for port reconnaissance, creating custom malware, and analyzing telemetry generated after executing the malware with Windows Defender disabled. While antivirus evasion is not a focus, the project emphasizes telemetry generation and analysis, enabling a deeper understanding of offensive and defensive cybersecurity techniques.
+Once the lab environment is set up, we can simulate an attack scenario to <b>generate telemetry data</b> for analysis. This project highlights offensive security techniques, including using <b>Nmap</b> for port <b>reconnaissance</b>, creating custom <b>malware</b>, and analyzing telemetry generated after executing the malware with <b>Windows Defender disabled</b>. While <b>antivirus</b> evasion is not a focus, the project emphasizes telemetry generation and analysis, enabling a deeper understanding of <b>offensive and defensive cybersecurity techniques</b>.
 
 # Tools & Techniques:
-- Nmap: For port scanning and service identification on the target machine.
-- MsfVenom: To create a reverse shell malware payload.
-- Metasploit Framework: To manage and monitor reverse shell connections.
-- Sysmon: For detailed system activity logging.
-- Splunk: To ingest and analyze telemetry logs from Sysmon.
+- <b>Nmap</b>: For port scanning and service identification on the target machine.
+- <b>MsfVenom</b>: To create a reverse shell malware payload.
+- <b>Metasploit Framework</b>: To manage and monitor reverse shell connections.
+- <b>Sysmon</b>: For detailed system activity logging.
+- <b>Splunk</b>: To ingest and analyze telemetry logs from Sysmon.
 
 # Skills Demonstrated:
-- Port scanning and reconnaissance using Nmap.
+- Port scanning and <b>reconnaissance</b> using <b>Nmap</b>.
 - Malware creation and execution with offensive security tools.
 - Configuring and managing Sysmon for telemetry generation.
-- Using Splunk for log ingestion, analysis, and creating actionable insights.
-- Understanding the relationship between offensive actions and defensive monitoring techniques.
+- Using <b>Splunk</b> for log ingestion, analysis, and creating actionable insights.
+- Understanding the relationship between <b>offensive actions and defensive monitoring techniques</b>.
 
 # Step-by-Step Process
 ## Using Nmap for reconnaissance 
 
-- I focus on using Nmap to scan a Windows machine effectively, employing options like '-a' for comprehensive scans and '-Pn' to bypass pings, ultimately identifying open ports such as RDP on port 3389.
-  
--  Using Nmap to scan the target Windows machine for open ports, specifically looking for services such as RDP on port 3389.
+- I focus on using <b>Nmap</b> to scan a Windows machine effectively, employing options like '<b>-a</b>' for comprehensive scans and '<b>-Pn</b>' to bypass <b>pings</b>, ultimately identifying open ports such as <b>RDP on port 3389</b>.
   - This emphasizes the importance of generating whether the ports are open and annotating any findingss.
 
     <img src="https://i.imgur.com/StwSUwf.png" height="50%" width="50%" alt="Network Options"/>
@@ -156,11 +154,11 @@ Once the lab environment is set up, we can simulate an attack scenario to genera
 
 
 ## Creating and Executing Malware
-- msfvenom is provided to generate basic malware ( though this clarifies that it won't cover methods to evade antivirus detection extensively. Instead, the primary goal is to showcase telemetry generation on the Windows machine.) 
+- <b>msfvenom</b> is provided to generate basic malware ( though this clarifies that it won't cover methods to evade antivirus detection extensively. Instead, the primary goal is to showcase telemetry generation on the Windows machine.) 
 
-- Simulate malicious activity by crafting and executing basic malware by using MsfVenom to create a reverse shell payload configured with custom LHOST and LPORT settings.
+- Simulate malicious activity by crafting and executing basic malware by using <b>MsfVenom</b> to create a reverse shell payload configured with custom <b>LHOST</b> and <b>LPORT</b> settings.
 IMAGE
-- Set up a Metasploit handler from Metasploit Framwork to capture connections from the executed malware.
+- Set up a <b>Metasploit handler from Metasploit Framwork</b> to capture connections from the executed malware.
   
   <img src="https://i.imgur.com/AZKFdhW.png" height="50%" width="50%" alt="Network Options"/>
   
@@ -182,9 +180,9 @@ IMAGE
 
 ## Downloading and Running the Malware
 - Disable Windows Defender on the target machine to allow malware execution.
-  - Open Windows Security > Virus & Threat Protection > Manage Settings > Turn Off Real-Time Protection.
+  - <b>Open Windows Security > Virus & Threat Protection > Manage Settings > Turn Off Real-Time Protection.</b>
 - Host the malware on an HTTP server for download.
-  - Host the malware for download (e.g., using a simple HTTP server with Python)
+  - Host the malware for download (e.g., <b>using a simple HTTP server with Python</b>)
     
   <img src="https://i.imgur.com/uhI3KD6.png" height="50%" width="50%" alt="Network Options"/>
 
@@ -232,5 +230,5 @@ IMAGE
 
 ## Conclusion
 
-This project demonstrates the combination of setting up a secure home lab with simulating malicious activity to generate and analyze telemetry. It helps develop skills in offensive security, malware analysis, and defensive monitoring techniques. By using tools like Nmap, Metasploit, Sysmon, and Splunk, you’ll gain a deeper understanding of how malicious activity can be detected and how telemetry data can be used to enhance cybersecurity defense strategies.
+- This project demonstrates the combination of setting up a secure home lab with simulating malicious activity to generate and analyze telemetry. It helps develop skills in offensive security, malware analysis, and defensive monitoring techniques. By using tools like Nmap, Metasploit, Sysmon, and Splunk, you’ll gain a deeper understanding of how malicious activity can be detected and how telemetry data can be used to enhance cybersecurity defense strategies.
 
