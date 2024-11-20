@@ -126,24 +126,42 @@ Once the lab environment is set up, we can simulate an attack scenario to genera
 - I focus on using Nmap to scan a Windows machine effectively, employing options like '-a' for comprehensive scans and '-Pn' to bypass pings, ultimately identifying open ports such as RDP on port 3389.
 -  Using Nmap to scan the target Windows machine for open ports, specifically looking for services such as RDP on port 3389.
   - This emphasizes the importance of generating whether the ports are open and annotating any findingss.
-    IMAGE 
+
+    <img src="https://i.imgur.com/StwSUwf.png" height="50%" width="50%" alt="Network Options"/>
+    <img src="https://i.imgur.com/AZKFdhW.png" height="50%" width="50%" alt="Network Options"/>
+
 ## Creating and Executing Malware
 - msfvenom is provided to generate basic malware ( though this clarifies that it won't cover methods to evade antivirus detection extensively. Instead, the primary goal is to showcase telemetry generation on the Windows machine.) 
 
 - Simulate malicious activity by crafting and executing basic malware by using MsfVenom to create a reverse shell payload configured with custom LHOST and LPORT settings.
 IMAGE
 - Set up a Metasploit handler from Metasploit Framwork to capture connections from the executed malware.
-IMAGE
+  <img src="https://i.imgur.com/AZKFdhW.png" height="50%" width="50%" alt="Network Options"/>
+  <img src="https://i.imgur.com/FnfEeGS.png" height="50%" width="50%" alt="Network Options"/>
+  <img src="https://i.imgur.com/4YMA3HU.png" height="50%" width="50%" alt="Network Options"/>
+  <img src="https://i.imgur.com/HjmO6Z0.png" height="50%" width="50%" alt="Network Options"/>
+  <img src="https://i.imgur.com/sNj8wiN.png" height="50%" width="50%" alt="Network Options"/>
+  <img src="https://i.imgur.com/5C07RN3.png" height="50%" width="50%" alt="Network Options"/>
+  <img src="https://i.imgur.com/LXtxNvK.png" height="50%" width="50%" alt="Network Options"/>
+  <img src="https://i.imgur.com/DXhFL5p.png" height="50%" width="50%" alt="Network Options"/>
+
 
 ## Downloading and Running the Malware
 - Disable Windows Defender on the target machine to allow malware execution.
   - Open Windows Security > Virus & Threat Protection > Manage Settings > Turn Off Real-Time Protection.
-IMAGE
 - Host the malware on an HTTP server for download.
-  -Host the malware for download (e.g., using a simple HTTP server with Python)
-IMAGE 
+  - Host the malware for download (e.g., using a simple HTTP server with Python)
+      <img src="https://i.imgur.com/uhI3KD6.png" height="50%" width="50%" alt="Network Options"/>
+
 - Download and execute the malware on the target machine, confirming the reverse shell connection using netstat and to task manager.
-  IMAGE
+  <img src="https://i.imgur.com/mfZMHNQ.png" height="50%" width="50%" alt="Network Options"/>
+  <img src="https://i.imgur.com/AtMzF2c.png" height="50%" width="50%" alt="Network Options"/>
+  <img src="https://i.imgur.com/i0ofA3o.png" height="50%" width="50%" alt="Network Options"/>
+  <img src="https://i.imgur.com/rUNPhRz.png" height="50%" width="50%" alt="Network Options"/>
+  <img src="https://i.imgur.com/yG6MQl1.png" height="50%" width="50%" alt="Network Options"/>
+  <img src="https://i.imgur.com/ISyKHeg.png" height="50%" width="50%" alt="Network Options"/>
+  <img src="https://i.imgur.com/PyQh0LP.png" height="50%" width="50%" alt="Network Options"/>
+
 
 ## Monitoring Telemetry with Splunk
 - Install and configure Sysmon on the Windows machine to capture detailed logs of system activities.
