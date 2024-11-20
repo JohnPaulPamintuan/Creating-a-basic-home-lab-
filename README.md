@@ -9,8 +9,8 @@ This repository documents the setup and configuration of a basic home lab tailor
 
 # Tool used
 - Oracle Virtualbox
-- Windows 10 (using tools like Microsoft Defender, Event viewer and installed Sysmon and Splunk) 
-- Kali linux (using other tools like Nmap, Metasploit and Python) 
+- Windows 10 
+- Kali linux
 
 
 # Lab Components
@@ -29,7 +29,7 @@ This repository documents the setup and configuration of a basic home lab tailor
   - Metasploitable 2 or 3.
 - Monitoring Tools:
   - Wireshark (network analysis).
-  - Splunk Free or ELK Stack (log analysis).
+  - Splunk Free (log analysis).
 - Other Tools:
   - Nmap, Burp Suite, and Nessus Essentials (vulnerability scanning).
 ## Network Setup
