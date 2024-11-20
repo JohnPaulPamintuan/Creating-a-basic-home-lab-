@@ -84,6 +84,40 @@ A snapshot is a "moment-in-time" backup of your VM that you can revert to later.
   - Provide a descriptive name and optional notes for future reference.
     - By using snapshots effectively, you can safely experiment and learn without permanent damage to your lab environment.
 
+#  Generate telemetry and detect malicious activity on a target machines.
+- This project highlights offensive security techniques, including using Nmap for port scanning, creating custom malware, and analyzing telemetry generated after executing the malware with Windows Defender disabled.
+- While not focused on antivirus evasion methods, the project prioritizes showcasing telemetry generation on a Windows machine, enabling exploration of various approaches to enhance cybersecurity skills.
 
+## Using Nmap for Scanning
+- I focus on using Nmap to scan a Windows machine effectively, employing options like '-a' for comprehensive scans and '-Pn' to bypass pings, ultimately identifying open ports such as RDP on port 3389.
+-  Using Nmap to scan the target Windows machine for open ports, specifically looking for services such as RDP on port 3389.
+  - This emphasizes the importance of generating whether the ports are open and annotating any findingss.
+    IMAGE 
+## Creating and Executing Malware
+- msfvenom is provided to generate basic malware ( though this clarifies that it won't cover methods to evade antivirus detection extensively. Instead, the primary goal is to showcase telemetry generation on the Windows machine.) 
+
+- Simulate malicious activity by crafting and executing basic malware by using MsfVenom to create a reverse shell payload configured with custom LHOST and LPORT settings.
+IMAGE
+- Set up a Metasploit handler from Metasploit Framwork to capture connections from the executed malware.
+IMAGE
+
+## Downloading and Running the Malware
+- Disable Windows Defender on the target machine to allow malware execution.
+  - Open Windows Security > Virus & Threat Protection > Manage Settings > Turn Off Real-Time Protection.
+IMAGE
+- Host the malware on an HTTP server for download.
+  -Host the malware for download (e.g., using a simple HTTP server with Python)
+IMAGE 
+- Download and execute the malware on the target machine, confirming the reverse shell connection using netstat and to task manager.
+  IMAGE
+
+## Monitoring Telemetry with Splunk
+- Install and configure Sysmon on the Windows machine to capture detailed logs of system activities.
+- Use Splunk to ingest Sysmon logs and create an index for endpoint telemetry.
+- Analyze logs to detect malicious activity and visualize key IoCs with Splunk dashboards.
+IMAGE
+
+## Conclusion
+This comprehensive approach demonstrates offensive techniques, highlights their impact on system telemetry, and fosters expertise in detecting and analyzing malicious activity in a simulated environment.
 
 
