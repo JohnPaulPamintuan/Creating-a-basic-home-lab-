@@ -7,18 +7,9 @@ The goal is to experiment with offensive techniques and detect malicious behavio
 
 ## Table of Contents
 1. Introduction
-- Goals
 2. Setting up the Home Lab
- - Installation of VirtualBox
-- Creating Virtual Machines
 3.  Network Configuration for Secure Testing
-- Network Options in VirtualBox
- - Step-by-Step Configuration Guide
-- VM Best Practices and Snapshots
 4.  Generating Telemetry from Malicious Activity
-- Tools & Techniques Used
-- Skills demonstrated
- - Step-by-Step Guide
 5. Conclusion
 
 
