@@ -55,7 +55,7 @@ To begin with, we'll create a virtualized environment using VirtualBox or VMware
 
   <img src="https://i.imgur.com/l5mrdwK.png" height="50%" width="50%" alt="Virtual box"/>
 
-# Network Configuration for Secure Testing
+# 3. Network Configuration for Secure Testing
 VirtualBox offers several network modes to control how your VMs communicate with each other and the host system. The correct configuration is essential for securing your testing environment, especially when working with potentially malicious software.
 
 ## Network Options in VirtualBox
@@ -116,7 +116,7 @@ To protect your home lab and ensure the stability of your VMs, follow these best
       
 
 
-# Generating Telemetry from Malicious Activity
+# 4. Generating Telemetry from Malicious Activity
 Once the lab environment is set up, we can simulate an attack scenario to <b>generate telemetry data</b> for analysis. This project highlights offensive security techniques, including using <b>Nmap</b> for port <b>reconnaissance</b>, creating custom <b>malware</b>, and analyzing telemetry generated after executing the malware with <b>Windows Defender disabled</b>. While <b>antivirus</b> evasion is not a focus, the project emphasizes telemetry generation and analysis, enabling a deeper understanding of <b>offensive and defensive cybersecurity techniques</b>.
 
 # Tools & Techniques:
@@ -219,7 +219,7 @@ IMAGE
   <img src="https://i.imgur.com/0wRApAq.png" height="50%" width="50%" alt="Network Options"/>
   
 
-## Conclusion
+## 5. Conclusion
 
 - This project demonstrates the combination of setting up a secure home lab with simulating malicious activity to generate and analyze telemetry. It helps develop skills in offensive security, malware analysis, and defensive monitoring techniques. By using tools like Nmap, Metasploit, Sysmon, and Splunk, you’ll gain a deeper understanding of how malicious activity can be detected and how telemetry data can be used to enhance cybersecurity defense strategies.
 
