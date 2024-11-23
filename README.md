@@ -149,7 +149,15 @@ Once the lab environment is set up, we can simulate an attack scenario to <b>gen
 
 - Simulate malicious activity by crafting and executing basic malware by using <b>MsfVenom</b> to create a reverse shell payload configured with custom <b>LHOST</b> and <b>LPORT</b> settings.
 
-- Set up a <b>Metasploit handler from Metasploit Framwork</b> to capture connections from the executed malware.
+- The payload is designed to leverage the Meterpreter reverse TCP exploit, masquerading as an innocent-looking file named resume.pdf.exe.
+  - Purpose of the Name "resume.pdf.exe"
+    - The name resume.pdf.exe is deliberately misleading. It tricks potential victims into believing the file is a harmless PDF document, potentially their resume, while it is actually an executable malware file.
+   - Verification of Payload
+     - After generating the file, commands like ls and file ensure the payload is created and confirm its properties.
+-  Handler Setup in Metasploit
+    - Handler is configured to listen for connections from the infected machine.
+    - The payload in the handler is set to match the one used during the msfvenom process:
+       - windows/x64/meterpreter/reverse_tcp.
   
   <img src="https://i.imgur.com/AZKFdhW.png" height="50%" width="50%" alt="Network Options"/>
   
