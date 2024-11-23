@@ -148,7 +148,7 @@ Once the lab environment is set up, we can simulate an attack scenario to <b>gen
 - <b>msfvenom</b> is provided to generate basic malware ( though this clarifies that it won't cover methods to evade antivirus detection extensively. Instead, the primary goal is to showcase telemetry generation on the Windows machine.) 
 
 - Simulate malicious activity by crafting and executing basic malware by using <b>MsfVenom</b> to create a reverse shell payload configured with custom <b>LHOST</b> and <b>LPORT</b> settings.
-IMAGE
+
 - Set up a <b>Metasploit handler from Metasploit Framwork</b> to capture connections from the executed malware.
   
   <img src="https://i.imgur.com/AZKFdhW.png" height="50%" width="50%" alt="Network Options"/>
